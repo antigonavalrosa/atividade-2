@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #eef2f7; /* Cor simples e limpa de fundo */
+    padding: 30px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #2d3748;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 24px;
+}
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.image-container {
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #edf2f7;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.card h2 {
+    font-size: 22px;
+    color: #2d3748;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.pokemon-id {
+    font-size: 13px;
+    color: #4a5568;
+    background-color: #ebf8ff;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.info-container {
+    display: flex;
+    gap: 10px;
+}
+
+.info-box {
+    flex: 1;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+}
+
+.info-box .label {
+    display: block;
+    font-size: 12px;
+    color: #718096;
+    margin-bottom: 4px;
+}
+
+.info-box .value {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 2px;
+}
+
+.info-box .unit {
+    display: block;
+    font-size: 10px;
+    color: #a0aec0;
+}
