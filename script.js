@@ -1,20 +1,15 @@
-
-
 const gridElement = document.querySelector("#pokemon-grid");
-
 const listaPokemons = ["pikachu", "charmander", "bulbasaur", "squirtle", "ditto", "snorlax", "mewtwo", "gengar"];
 
-function buscarPokemon(nomeOuId) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${nomeOuId}`)
-        .then(resposta => {
+async function carregarPokemons() {
+    for (const nomeOuId of listaPokemons) {
+        try {
+            const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nomeOuId}`);
             if (!resposta.ok) {
                 throw new Error("Erro ao buscar o Pokémon");
             }
-            return resposta.json();
-        })
-        .then(dados => {
-            console.log(`Pokémon ${dados.name} carregado com sucesso!`);
-
+            const dados = await resposta.json();
+            
             const card = document.createElement("div");
             card.classList.add("card");
 
@@ -39,13 +34,10 @@ function buscarPokemon(nomeOuId) {
             `;
 
             gridElement.appendChild(card);
-        })
-        .catch(erro => {
-            console.error("Erro ao consultar Pokémon:", erro);
-        });
+        } catch (erro) {
+            console.error("Erro:", erro);
+        }
+    }
 }
 
-
-listaPokemons.forEach(pokemon => {
-    buscarPokemon(pokemon);
-});
+carregarPokemons();
